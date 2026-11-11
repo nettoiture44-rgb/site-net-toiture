@@ -42,7 +42,47 @@
         <p class="privacy-note"><strong>Déplacement sur chantier — pas d’accueil du public.</strong><br>Aucune adresse personnelle n’est communiquée.</p>
       </div>
 
-      <div class="orion-request"><h3>Demander un devis à Frédéric</h3><p>Décrivez votre projet et laissez vos coordonnées. Votre demande est enregistrée directement pour son suivi et vous recevez une copie par e-mail.</p><p class="privacy-note">Cette demande ne vous engage pas à commander des travaux. Si vous préférez échanger directement, appelez le <a href="tel:+33685094855">06 85 09 48 55</a>.</p><a class="outline-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfTeoB6dEa_6HuPvICEfU9HEij5n-EbfWsgxBzzkRtaTlt_KQ/viewform" target="_blank" rel="noopener">Ouvrir le formulaire en plein écran</a><iframe class="orion-google-form" title="Demande de devis Net Toiture" src="https://docs.google.com/forms/d/e/1FAIpQLSfTeoB6dEa_6HuPvICEfU9HEij5n-EbfWsgxBzzkRtaTlt_KQ/viewform?embedded=true" width="100%" height="2400" style="border:0" loading="lazy">Chargement du formulaire…</iframe><p class="privacy-note">Vos données sont utilisées par Net Toiture pour étudier votre demande et suivre votre dossier. Le formulaire et l’envoi de la copie sont assurés par Google. <a href="mentions-legales.html">Utilisation de vos données</a>.</p></div>
+      <div class="orion-request"><h3>Demander un devis à Frédéric</h3><p>Décrivez votre projet et laissez vos coordonnées : Frédéric vous rappelle pour fixer une visite. Cette demande ne vous engage pas à commander des travaux.</p><p class="privacy-note">Vous préférez échanger directement ? Appelez le <a href="tel:+33685094855">06 85 09 48 55</a>.</p><style>
+.nt-form{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+.nt-form .full{grid-column:1/-1}
+.nt-form label{display:block;font-weight:700;font-size:.92rem;color:#0c2d48;margin-bottom:6px}
+.nt-form input,.nt-form select{width:100%;font:inherit;font-size:1rem;color:#1a2b3c;background:#fff;border:1.5px solid #cfd8e0;border-radius:10px;padding:13px 14px;transition:border-color .15s,box-shadow .15s}
+.nt-form input:focus,.nt-form select:focus{outline:none;border-color:#39a96b;box-shadow:0 0 0 3px rgba(57,169,107,.2)}
+.nt-form .hp{position:absolute;left:-9999px;height:0;overflow:hidden}
+.nt-consent{font-weight:500 !important;display:flex;gap:10px;align-items:flex-start;font-size:.9rem;color:#3b4d5e}
+.nt-consent input{width:auto;margin-top:3px;accent-color:#39a96b}
+.nt-send{width:100%;font:inherit;font-weight:800;font-size:1.05rem;color:#fff;background:#0c2d48;border:0;border-radius:999px;padding:15px 24px;cursor:pointer;transition:background .15s}
+.nt-send:hover{background:#39a96b}.nt-send:disabled{opacity:.6;cursor:wait}
+.nt-msg{display:none;border-radius:12px;padding:16px 18px;font-weight:600}
+.nt-msg.ok{display:block;background:#eaf7f0;border:1.5px solid #39a96b;color:#0c2d48}
+.nt-msg.ko{display:block;background:#fdeeee;border:1.5px solid #d65a5a;color:#7a1f1f}
+@media(max-width:640px){.nt-form{grid-template-columns:1fr}}
+</style><form class="nt-form" id="nt-devis" novalidate>
+<div><label for="nt-prenom">Prénom</label><input id="nt-prenom" name="prenom" autocomplete="given-name" maxlength="100" required></div>
+<div><label for="nt-nom">Nom</label><input id="nt-nom" name="nom" autocomplete="family-name" maxlength="100" required></div>
+<div><label for="nt-tel">Téléphone</label><input id="nt-tel" name="telephone" type="tel" autocomplete="tel" maxlength="30" required></div>
+<div><label for="nt-email">E-mail</label><input id="nt-email" name="email" type="email" autocomplete="email" maxlength="180" required></div>
+<div class="full"><label for="nt-adresse">Adresse du chantier</label><input id="nt-adresse" name="adresse" autocomplete="street-address" maxlength="250" required></div>
+<div><label for="nt-cp">Code postal</label><input id="nt-cp" name="codePostal" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" required></div>
+<div><label for="nt-ville">Commune</label><input id="nt-ville" name="ville" autocomplete="address-level2" maxlength="100" required></div>
+<div class="full"><label for="nt-presta">Prestation souhaitée</label><select id="nt-presta" name="prestation" required><option value="">Choisir…</option><option value="Nettoyage toiture">Nettoyage toiture</option><option value="Nettoyage façades">Nettoyage façades</option><option value="Antimousse toiture">Antimousse toiture</option><option value="Hydrofuge toiture">Hydrofuge toiture</option><option value="Hydrofuge façades">Hydrofuge façades</option><option value="Traitement de charpente">Traitement de charpente</option><option value="Isolation des combles">Isolation des combles</option><option value="Velux">Velux</option><option value="Couverture/ réfection">Couverture / réfection</option><option value="Autre">Autre</option></select></div>
+<div class="hp" aria-hidden="true"><label>Ne pas remplir<input name="website" tabindex="-1" autocomplete="off"></label></div>
+<label class="nt-consent full"><input type="checkbox" id="nt-ok" required><span>J’accepte que Net Toiture utilise ces informations pour étudier ma demande et me recontacter.</span></label>
+<div class="full"><button class="nt-send" type="submit">Envoyer ma demande de devis</button></div>
+<div class="nt-msg full" id="nt-msg" role="status" aria-live="polite"></div>
+</form><p class="privacy-note">Vos données sont utilisées uniquement par Net Toiture pour étudier votre demande et suivre votre dossier. <a href="mentions-legales.html">Utilisation de vos données</a>.</p><script>(function(){var API='https://script.google.com/macros/s/AKfycbzUN7qWpjLulJsit59KBGYjmvzsAvAZocpcyJJD9o2nCeb5NsvHyZmRZxVmRlgpIy05/exec';var f=document.getElementById('nt-devis');if(!f)return;var m=document.getElementById('nt-msg');var b=f.querySelector('.nt-send');
+function say(c,t){m.className='nt-msg full '+c;m.textContent=t;}
+f.addEventListener('submit',function(e){e.preventDefault();m.className='nt-msg full';
+var d=new FormData(f);var v={};['prenom','nom','telephone','email','adresse','codePostal','ville','prestation'].forEach(function(k){v[k]=String(d.get(k)||'').trim();});
+if(!v.prenom||!v.nom||!v.adresse||!v.ville||!v.prestation){say('ko','Merci de remplir tous les champs.');return;}
+if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email)){say('ko','Cette adresse e-mail ne semble pas valide.');return;}
+if(!/^\d{5}$/.test(v.codePostal)){say('ko','Le code postal doit comporter 5 chiffres.');return;}
+if(v.telephone.replace(/\D/g,'').length<9){say('ko','Merci d’indiquer un numéro de téléphone valide.');return;}
+if(!document.getElementById('nt-ok').checked){say('ko','Merci de cocher la case d’accord pour envoyer la demande.');return;}
+var id='web-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,12)+Math.random().toString(36).slice(2,8);
+var p=new URLSearchParams();p.set('action','demande_devis');p.set('requestId',id);p.set('website',String(d.get('website')||''));for(var k in v)p.set(k,v[k]);
+b.disabled=true;b.textContent='Envoi en cours…';
+fetch(API,{method:'POST',mode:'no-cors',body:p}).then(function(){f.reset();say('ok','Merci, votre demande est bien envoyée. Un e-mail de confirmation vous est adressé et Frédéric vous rappelle rapidement. Sans nouvelle sous 48 h, appelez-le au 06 85 09 48 55.');b.textContent='Demande envoyée';}).catch(function(){b.disabled=false;b.textContent='Envoyer ma demande de devis';say('ko','L’envoi n’a pas abouti. Vous pouvez réessayer ou appeler Frédéric au 06 85 09 48 55.');});});})();<\/script></div>
     </section>
 
     <section class="contact-area">
