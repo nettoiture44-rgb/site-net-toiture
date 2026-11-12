@@ -83,7 +83,7 @@ if(!document.getElementById('nt-ok').checked){say('ko','Merci de cocher la case 
 var id='web-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,12)+Math.random().toString(36).slice(2,8);
 var p=new URLSearchParams();p.set('action','demande_devis');p.set('requestId',id);p.set('website',String(d.get('website')||''));for(var k in v)p.set(k,v[k]);
 b.disabled=true;b.textContent='Envoi en cours…';
-fetch(API,{method:'POST',mode:'no-cors',body:p}).then(function(){f.reset();say('ok','Merci, votre demande est bien envoyée. Un e-mail de confirmation vous est adressé et Frédéric vous rappelle rapidement. Sans nouvelle sous 48 h, appelez-le au 06 85 09 48 55.');b.textContent='Demande envoyée';}).catch(function(){b.disabled=false;b.textContent='Envoyer ma demande de devis';say('ko','L’envoi n’a pas abouti. Vous pouvez réessayer ou appeler Frédéric au 06 85 09 48 55.');});});})();<\/script></div>
+fetch(API,{method:'POST',mode:'no-cors',body:p}).then(function(){f.reset();say('ok','Merci, votre demande est bien envoyée. Un e-mail de confirmation vous est adressé et Frédéric vous rappelle rapidement. Sans nouvelle sous 48 h, appelez-le au 06 85 09 48 55.');b.textContent='Demande envoyée';}).catch(function(){b.disabled=false;b.textContent='Envoyer ma demande de devis';say('ko','L’envoi n’a pas abouti. Vous pouvez réessayer ou appeler Frédéric au 06 85 09 48 55.');});});})();</script></div>
     </section>
 
     <section class="contact-area">
