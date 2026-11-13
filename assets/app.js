@@ -2,6 +2,39 @@ const form = document.querySelector('#quote-form');
 const select = document.querySelector('#prestation');
 const menuToggle = document.querySelector('.menu-toggle');
 (function () {
+  var s = document.getElementById('surf');
+  if (!s) return;
+  try {
+    var q = new URLSearchParams(location.search).get('surface');
+    if (q && +q > 0 && +q <= 600) s.value = q;
+  } catch (e) {}
+})();
+(function () {
+  var f = document.getElementById('nt-devis');
+  var m = document.getElementById('nt-msg');
+  if (!f || !m) return;
+  var go = null;
+  f.addEventListener('submit', function () {
+    var s = document.getElementById('nt-surface');
+    var fo = document.getElementById('nt-formule');
+    go = { s: s ? s.value.trim() : '', fo: fo ? fo.value : '' };
+  }, true);
+  new MutationObserver(function () {
+    if (go && /\bok\b/.test(m.className)) {
+      var d = go;
+      go = null;
+      m.textContent += ' Vous allez être redirigé vers nos formules.';
+      setTimeout(function () {
+        var q = [];
+        if (+d.s > 0) q.push('surface=' + encodeURIComponent(d.s));
+        if (d.fo) q.push('formule=' + encodeURIComponent(d.fo));
+        location.href = 'formules.html' + (q.length ? '?' + q.join('&') : '');
+      }, 4000);
+    }
+  }).observe(m, { attributes: true, attributeFilter: ['class'] });
+})();
+
+(function () {
   var o = document.querySelector('.orion-request');
   if (!o || !document.getElementById('devis')) return;
   o.innerHTML = '<h3>Demander un devis à Frédéric</h3><p>Indiquez votre commune, la surface approximative de votre toiture et la formule qui vous intéresse. Frédéric vous rappelle pour fixer une visite gratuite.</p><a class="primary-btn" href="contact.html#demande">Remplir ma demande de devis</a><p class="privacy-note">Cette demande ne vous engage pas à commander des travaux. Si vous préférez échanger directement, appelez le <a href="tel:+33685094855">06 85 09 48 55</a>.</p>';
