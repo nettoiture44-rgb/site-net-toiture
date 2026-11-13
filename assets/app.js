@@ -3,6 +3,16 @@ const select = document.querySelector('#prestation');
 const menuToggle = document.querySelector('.menu-toggle');
 const mainNav = document.querySelector('.main-nav');
 
+(function () {
+  var n = document.querySelector('.main-nav');
+  if (!n || n.querySelector('a[href="formules.html"]')) return;
+  var p = n.querySelector('a[href="prestations.html"]');
+  var a = document.createElement('a');
+  a.href = 'formules.html';
+  a.textContent = 'Nos formules';
+  if (p && p.nextSibling) n.insertBefore(a, p.nextSibling); else n.appendChild(a);
+})();
+
 if (menuToggle && mainNav) {
   const closeMenu = () => {
     mainNav.classList.remove('is-open');
