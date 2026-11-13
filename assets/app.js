@@ -1,6 +1,12 @@
 const form = document.querySelector('#quote-form');
 const select = document.querySelector('#prestation');
 const menuToggle = document.querySelector('.menu-toggle');
+(function () {
+  var o = document.querySelector('.orion-request');
+  if (!o || !document.getElementById('devis')) return;
+  o.innerHTML = '<h3>Demander un devis à Frédéric</h3><p>Indiquez votre commune, la surface approximative de votre toiture et la formule qui vous intéresse. Frédéric vous rappelle pour fixer une visite gratuite.</p><a class="primary-btn" href="contact.html#demande">Remplir ma demande de devis</a><p class="privacy-note">Cette demande ne vous engage pas à commander des travaux. Si vous préférez échanger directement, appelez le <a href="tel:+33685094855">06 85 09 48 55</a>.</p>';
+})();
+
 const mainNav = document.querySelector('.main-nav');
 (function () {
   var f = document.getElementById('nt-devis');
