@@ -1,3 +1,4 @@
+(function(){try{var n=document.querySelector('#main-menu');if(!n||n.querySelector('a[href="zones.html"]'))return;var a=document.createElement('a');a.href='zones.html';a.textContent='Zones d’intervention';if(/zones\.html$/.test(location.pathname))a.className='active';var c=n.querySelector('a[href^="contact"]');if(c)n.insertBefore(a,c);else n.appendChild(a);}catch(e){}})();
 const form = document.querySelector('#quote-form');
 const select = document.querySelector('#prestation');
 const menuToggle = document.querySelector('.menu-toggle');
